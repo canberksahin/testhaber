@@ -9,7 +9,7 @@ import type { NewsContent } from "@/types/news"
 const MAX_RETRIES = 2
 // Timeout for fetch requests in milliseconds
 const FETCH_TIMEOUT = 15000
-
+debugger;
 // Define the model to use
 const AI_MODEL = "gpt-4o-mini" // Fallback to a more reliable model
 // Set a lower temperature for more deterministic outputs
@@ -18,7 +18,9 @@ const MODEL_TEMPERATURE = 0.3
 const MAX_TOKENS = 3000
 
 export async function extractNewsContent(url: string): Promise<NewsContent> {
+  debugger;
   try {
+    debugger;
     // Validate URL format
     let validatedUrl: URL
     try {
@@ -178,6 +180,7 @@ export async function extractNewsContent(url: string): Promise<NewsContent> {
     // Detect language and translate if needed
     let languageResult
     try {
+      debugger;
       languageResult = await detectLanguageAndTranslate(title, mainContent)
     } catch (error) {
       console.error("Language detection/translation error:", error)
@@ -461,6 +464,7 @@ async function detectLanguageAndTranslate(
   isTranslated: boolean
 }> {
   try {
+    debugger;
     // Use OpenAI to detect language with better error handling
     let detectionResult
     try {
